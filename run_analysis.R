@@ -57,11 +57,11 @@ colnames(TrainTestMaster) <- gsub("\\.\\.", "", colnames(TrainTestMaster))
 
 # From the data subset, create a second, independent tidy data set 
 # with the average of each variable for each activity and each subject.
-TrainTestAverage <- aggregate( TrainTestMaster[,1:66], by=list(TrainTestMaster$Activity,TrainTestMaster$Subject), FUN=mean)
+TrainTestAverage <- aggregate( TrainTestMaster[,1:66], by=list(TrainTestMaster$Subject,TrainTestMaster$Activity), FUN=mean)
 
 # Provide the grouping labels with descriptive variable names 
-names(TrainTestAverage)[1] <- "Activity"
-names(TrainTestAverage)[2] <- "Subject"
+names(TrainTestAverage)[2] <- "Activity"
+names(TrainTestAverage)[1] <- "Subject"
 
 # The code section below will now to convert the wide data set into a narrow tidy dataset
 
@@ -89,7 +89,10 @@ names(stdMelt)[4] <- "StandardDeviation"
 # Use join function from plyr to join the Mean and Std datasets into one dataset 
 # Use Activity, Subject and Feature columns as key for the join
 library(plyr)
-TrainTestAverageTidy <- join( meanMelt, stdMelt, by=c("Activity","Subject","Feature"))
+TrainTestAverageMelt <- join( meanMelt, stdMelt, by=c("Activity","Subject","Feature"))
+
+# Order the dataset for better readability
+TrainTestAverageTidy <- TrainTestAverageMelt[with(TrainTestAverageMelt,order(Activity,Subject,Feature)),]
 
 # Write the narrow tidy data set to a text file
 write.table(TrainTestAverageTidy, file = "TidyData.txt", row.names = FALSE)
