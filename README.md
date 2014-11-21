@@ -1,4 +1,7 @@
-# This file describes how the run_analysis.R code script works.
+# README for run_analysis.R script 
+---
+
+This file describes how the run_analysis.R code script works.
 
 ## Get the source data
 
@@ -97,6 +100,7 @@ This provides the tidy dataset named as TrainTestAverageTidy.
 
 ### Write the tidy dataset to a text file
 We write the TrainTestAverageTidy dataset to a text file (TidyData.txt), so that this information can be later uploaded to the course website.
+
 Please refer to the Codebook.md file for a detailed description of the variables in the Tidy dataset.
 
 

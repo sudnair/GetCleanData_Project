@@ -37,7 +37,9 @@ The result is a narrow data set with five columns: Activity, Subject, Feature, M
 
 ## Data Dictionary 
 
-1. Activity    : Activity performed by subject
+
+
+-  Activity    : Activity performed by subject
 
 > 
 
@@ -49,14 +51,18 @@ The result is a narrow data set with five columns: Activity, Subject, Feature, M
          STANDING
          LAYING
 
-2. Subject     : Identifier of the subject who carried out the experiment
+
+
+-  Subject     : Identifier of the subject who carried out the experiment
 
 > 
 
          Integer 
          Range from 1 to 30
 
-3. Feature     : The features come from the accelerometer and gyroscope 3-axial raw signals
+
+
+-  Feature     : The features come from the accelerometer and gyroscope 3-axial raw signals
 
 > 
 
@@ -95,13 +101,17 @@ The result is a narrow data set with five columns: Activity, Subject, Feature, M
          fBodyGyroMag : Magnitude of frequency domain body Gyroscopic signal 
          fBodyGyroJerkMag : Magnitude of frequency domain body Gyroscopic Jerk signal
 
-4. Mean	     : Average of the Mean value. Computed for each Activity, Subject and Feature.
+
+
+-  Mean	     : Average of the Mean value. Computed for each Activity, Subject and Feature.
 
 > 
 
          Numeric
 
-5. StandardDeviation  : Average of the Standard Deviation value.  Computed for each Activity, Subject and Feature
+
+
+-  StandardDeviation  : Average of the Standard Deviation value.  Computed for each Activity, Subject and Feature
 
 > 
 
